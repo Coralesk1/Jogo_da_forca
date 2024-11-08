@@ -68,9 +68,9 @@ def startgame():
     tentativas = 6
 
     while tentativas > 0:
-        limpar_tela()  # Limpa a tela antes de mostrar o estado atual
-        exibir_forca(tentativas)  # Exibe o estado da forca
-        print(f'Tentativas restantes: {tentativas}')  # Exibe as tentativas restantes
+        limpar_tela() 
+        exibir_forca(tentativas)  
+        print(f'Tentativas restantes: {tentativas}')  
        
         # Exibe o progresso da palavra
         palavra_formada = ''
@@ -98,12 +98,12 @@ def startgame():
             print('A palavra era', palavra_secreta)
             print('Tentativas:', numero_tentativas)
             sair = input("Deseja sair do jogo? [S/N]: ").lower()
-            while len(sair) > 1 or not sair.isalpha():  # Verificação da entrada
+            while len(sair) > 1 or not sair.isalpha():  
                 sair = input("Entrada inválida. Deseja sair do jogo? [S/N]: ").lower()
             if sair == 's':
                 sys.exit(0)
             else:
-                return startgame()  # Reinicia o jogo
+                return startgame()  
 
         # Solicita a letra do usuário
        
@@ -120,7 +120,7 @@ def startgame():
         if letra_digitada in palavra_secreta:
             letras_acertadas += letra_digitada
         else:
-            tentativas -= 1  # Reduz as tentativas se errar
+            tentativas -= 1  
         
         # Verifica se as tentativas acabaram
         if tentativas == 0:
@@ -129,7 +129,7 @@ def startgame():
             print("Acabaram as chances!!! A palavra era:", palavra_secreta)
             try:
                 sair = input("Deseja sair do jogo? [S/N]: ").lower()
-                while len(sair) > 1 or not sair.isalpha():  # Verificação da entrada
+                while len(sair) > 1 or not sair.isalpha():  
                     sair = input("Entrada inválida. Deseja sair do jogo? [S/N]: ").lower()
                 while sair not in ['s', 'n']:
                     sair = input("Digite apenas S ou N: ").lower()
